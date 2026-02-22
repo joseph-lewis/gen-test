@@ -1,6 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
+:root {
   --color-genesis-black: #0A0A0A;
   --color-genesis-dark: #111111;
   --color-genesis-text: #F5F5F5;
@@ -20,7 +22,6 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
-/* Subtle noise texture overlay */
 body::before {
   content: "";
   position: fixed;
@@ -33,7 +34,6 @@ body::before {
   background-size: 256px 256px;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -51,7 +51,6 @@ body::before {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* Testimonial carousel animation */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
