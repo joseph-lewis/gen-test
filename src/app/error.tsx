@@ -1,29 +1,24 @@
-'use client';
-
-import { useEffect } from 'react';
+"use client";
 
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center text-center">
-      <h1 className="text-5xl font-light text-genesis-white">
-        Something went wrong!
+    <main className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <h1 className="mb-4 text-6xl font-light tracking-tight text-genesis-white">
+        500
       </h1>
-      <p className="mt-4 text-lg text-genesis-text">{error.message}</p>
+      <p className="mb-8 text-lg font-light text-genesis-muted">
+        Something went wrong on our end.
+      </p>
       <button
-        onClick={() => reset()}
-        className="mt-8 rounded-md bg-genesis-white px-8 py-3 text-lg font-medium text-genesis-black transition-transform hover:scale-105"
+        onClick={reset}
+        className="inline-flex items-center justify-center rounded-full bg-genesis-white px-8 py-4 text-sm font-medium text-genesis-black transition-colors hover:bg-genesis-text"
       >
-        Try again
+        Try Again
       </button>
     </main>
   );
